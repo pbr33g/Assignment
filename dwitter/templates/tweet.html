@@ -1,0 +1,26 @@
+ <html>
+<head>
+    <title>Add|Blogs</title>
+</head>
+<body>
+    <h1>DWITTER</h1>
+
+    {% if form.errors %}
+        <p style="color:red;">
+            Please correct the error{{form.errors|pluralize}} below
+        </p>
+    {% endif %}
+
+    <form action='' method='post'>
+        {% csrf_token %}
+        <div class="field">
+            {{ form.tweet_text.errors }}
+            <label for="id_title">Enter your Dweets:</label>
+            {{ form.tweet_text }}
+        </div>
+
+        <input type='submit' value='POST'/>
+    </form>
+</body>
+</html>
+
